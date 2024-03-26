@@ -244,13 +244,13 @@ module pulley(belt_type, pulley_OD, tooth_depth, tooth_width) {
             }
         
             if ( bottom_flange > 0 ) {
-                bottob_flange_bottom_diameter = bottom_flange_diameter_equal_base ? base_diameter/2 : pulley_OD/2 + bottom_flange_height;
+                bottom_flange_bottom_diameter = bottom_flange_diameter_equal_base ? base_diameter/2 : pulley_OD/2 + bottom_flange_height;
                 translate([0, 0, true_base_height - bottom_flange_width ]) 
                   rotate_extrude($fn=number_of_teeth*polygon_multiplier)  
                     polygon([
                         [0, 0],
-                        [bottob_flange_bottom_diameter, 0],
-                        [bottob_flange_bottom_diameter, bottom_flange_width * 2/3],
+                        [bottom_flange_bottom_diameter, 0],
+                        [bottom_flange_bottom_diameter, bottom_flange_width * 2/3],
                         [pulley_OD/2 + flange_spare_height, bottom_flange_width],
                         [0 , bottom_flange_width],
                         [0, 0]
